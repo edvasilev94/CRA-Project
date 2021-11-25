@@ -1,3 +1,5 @@
+import './Header.css'
+
 const Header = () => {
     return (
         <header>
@@ -10,7 +12,7 @@ const Header = () => {
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                         </button>
-                        <a className="navbar-brand" href="#"><img className="img-responsive" src="img/logo.png" alt="Logo" /></a>
+                        <a className="navbar-brand" href="#"><img className="img-responsive" src="img/home.jpeg" alt="Logo" /></a>
                     </div>
                     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav navbar-right">
