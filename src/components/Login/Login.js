@@ -1,22 +1,27 @@
 const Login = () => {
 
-    
+    let formData = new FormData();
+
+    const submitHandler = (e) => {
+        console.log(formData);
+    }
+
 
     return (
-        <div class="banner">
-        <div class="container">
-            <div class="login-area">
+        <div className="banner">
+        <div className="container">
+            <div className="login-area">
                 <h3>Sign In, To Your Account</h3>
                 <form role="form" id="login-form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="exampleInputUser1" placeholder="Username" />
+                    <div className="form-group">
+                        <input type="text" className="form-control" id="exampleInputUser1" placeholder="Username" />
                     </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                    <div className="form-group">
+                        <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
                     </div>
-                    <div class="checkbox form-group">
+                    <div className="checkbox form-group">
                     </div>
-                    <button type="submit" class="btn btn-default">Login</button>
+                    <button type="submit" className="btn btn-default">Login</button>
                 </form>
             </div>
         </div>
