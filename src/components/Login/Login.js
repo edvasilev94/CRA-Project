@@ -1,9 +1,14 @@
 const Login = () => {
 
-    let formData = new FormData();
-
+    
     const submitHandler = (e) => {
-        console.log(formData);
+        e.preventDefault();
+        
+        let formData = new FormData(e.currentTarget);
+
+
+        console.log(formData.get('username'));
+        console.log(formData.get('password'));
     }
 
 
@@ -12,12 +17,12 @@ const Login = () => {
         <div className="container">
             <div className="login-area">
                 <h3>Sign In, To Your Account</h3>
-                <form role="form" id="login-form">
+                <form role="form" id="login-form" onSubmit={submitHandler}>
                     <div className="form-group">
-                        <input type="text" className="form-control" id="exampleInputUser1" placeholder="Username" />
+                        <input type="text" className="form-control" name='username'id="exampleInputUser1" placeholder="Username" />
                     </div>
                     <div className="form-group">
-                        <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
+                        <input type="password" className="form-control" name='password'id="exampleInputPassword1" placeholder="Password" />
                     </div>
                     <div className="checkbox form-group">
                     </div>
