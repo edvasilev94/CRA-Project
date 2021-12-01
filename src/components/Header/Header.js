@@ -22,7 +22,7 @@ const Header = () => {
                             <li><Link to="/login">Login</Link></li>
                             <li><Link to="/crate">Crate Recipe</Link></li>
                             <li><Link to="/myrecipes">My Recipes</Link></li>
-                            <li><Link to="/recepies">All Recipes</Link></li>
+                            <li><Link to="/recipes">All Recipes</Link></li>
                             <li><Link to="/logout">Logout</Link></li>
                         </ul>
                     </div>

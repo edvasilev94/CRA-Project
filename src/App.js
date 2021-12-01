@@ -7,6 +7,7 @@ import HomePage from './components/HomePage/HomePage';
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import CrateRecipe from './components/CrateRecipe/CrateRecipe'
+import AllRecipes from './components/AllRecipes/AllRecipes';
 
 
 function App() {
@@ -16,10 +17,11 @@ function App() {
 
       <Routes>
         <Route path="/" element={<><Home/><HomePage /></>} />
+        <Route path="/recipes" element={<AllRecipes/>} />
         <Route path="/crate" element={<CrateRecipe/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
-      </Routes>
+       </Routes>
 
       <Footer />
     </div>

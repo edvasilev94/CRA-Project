@@ -6,18 +6,21 @@ const CrateRecipe = () => {
 						<h3>Crate Recipe</h3>
 						<form role="form" id="register-form">
 							<div className="form-group">
-								<input type="text" className="form-control" id="exampleInputName1" placeholder="Recipe Name	" />
+								<input type="text" className="form-control" id="name" placeholder="Recipe Name" />
 							</div>
 							<div className="form-group">
 							</div>
 							<div className="form-group">
-								<input type="email" className="form-control" id="exampleInputEmail1" placeholder="ingredients" />
+								<input type="text" className="form-control" id="ingredients" placeholder="Ingredients" />
 							</div>
 							<div className="form-group">
-								<input type="password" className="form-control" id="exampleInputPassword1" placeholder="Time for cooking" />
+								<input type="text" className="form-control" id="time" placeholder="Time for cooking" />
 							</div>
 							<div className="form-group">
-								<input type="password" className="form-control" id="exampleInputPassword2" placeholder="Way to cook" />
+								<input type="text" className="form-control" id="url" placeholder="Image URL" />
+							</div>
+							<div className="form-group">
+								<input type="text" className="form-control" id="instructions" placeholder="Instructions" />
 							</div>
 							<button type="submit" className="btn btn-default">Crate</button>&nbsp;
 						</form>
