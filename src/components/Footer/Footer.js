@@ -2,7 +2,7 @@ const Footer = () => {
     return (
         <footer>
         <div className="container">
-            <p><a href="#">My Recepies</a> | <a href="#work">All Recepies </a>| <a href="#work">Home</a></p>
+            <p><a href="/myrecipes">My Recepies</a> | <a href="/recipes">All Recepies </a>| <a href="/">Home</a></p>
             {/* <div className="social">
                 <a href="#"><i className="fa fa-facebook"></i></a>
                 <a href="#"><i className="fa fa-twitter"></i></a>

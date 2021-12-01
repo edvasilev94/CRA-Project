@@ -16,6 +16,7 @@ const Header = () => {
                         <ul className="nav navbar-nav navbar-right">
                             <li><a href="/register">Signup</a></li>
                             <li><a href="/login">Login</a></li>
+                            <li><a href="/crate">Crate Recipe</a></li>
                             <li><a href="/myrecipes">My Recipes</a></li>
                             <li><a href="/recepies">All Recipes</a></li>
                             <li><a href="/logout">Logout</a></li>
