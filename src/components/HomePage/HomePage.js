@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const HomePage = () => {
 
     return (
@@ -10,7 +12,7 @@ const HomePage = () => {
 						<div className="col-md-6 col-sm-6">
 							<div className="entry">
 								<img className="img-responsive" src="img/blog/1.jpg" alt="Blog" />
-								<h3><a href="#">Communicating with you every step of the way</a></h3>
+								<h3><Link to="#">Communicating with you every step of the way,</Link></h3>
 								<span className="meta">
 									July 02, 2014 | Tag: Technology | By: David John
 								</span>
@@ -20,7 +22,7 @@ const HomePage = () => {
 						<div className="col-md-6 col-sm-6">
 							<div className="entry">
 								<img className="img-responsive" src="img/blog/2.jpg" alt="Blog" />
-								<h3><a href="#">Communicating with you every step of the way</a></h3>
+								<h3><Link to="#">Communicating with you every step of the way,</Link></h3>
 								<span className="meta">
 									July 02, 2014 | Tag: Technology | By: David John
 								</span>
@@ -29,7 +31,7 @@ const HomePage = () => {
 						</div>
 					</div>
 					<div className="text-center">
-						<a href="#" className="btn btn-default">See More</a>
+						<Link to="/recipes" className="btn btn-default">See More</Link>
 					</div>
 				</div>
 			</div>

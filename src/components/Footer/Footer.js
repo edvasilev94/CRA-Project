@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom'
+
 const Footer = () => {
     return (
         <footer>
         <div className="container">
-            <p><a href="/myrecipes">My Recepies</a> | <a href="/recipes">All Recepies </a>| <a href="/">Home</a></p>
+            <p><Link to="/myrecipes">My Recepies</Link> | <Link to="/recipes">All Recepies </Link>| <Link to="/">Home</Link></p>
             {/* <div className="social">
                 <a href="#"><i className="fa fa-facebook"></i></a>
                 <a href="#"><i className="fa fa-twitter"></i></a>
