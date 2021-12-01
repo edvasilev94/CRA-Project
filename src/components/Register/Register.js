@@ -1,12 +1,18 @@
-import { Link } from 'react-router-dom'
-
 const Register = () => {
+
+
+	const onSubmitToHome = (e) => {
+		e.preventDefault();
+	
+		console.log('ckic')
+	}
+
     return (
         <div className="banner">
 				<div className="container">
 					<div className="register-area">
 						<h3>Sign Up, For An Account</h3>
-						<form role="form" id="register-form">
+						<form role="form" id="register-form"  onSubmit={onSubmitToHome}>
 							<div className="form-group">
 								<input type="text" className="form-control" id="exampleInputName1" placeholder="Full Name" />
 							</div>

@@ -1,5 +1,9 @@
+import { useNavigate } from "react-router-dom";
+
+
 const Login = () => {
 
+    let navigate = useNavigate();
     
     const submitHandler = (e) => {
         e.preventDefault();
@@ -8,7 +12,9 @@ const Login = () => {
 
 
         console.log(formData.get('username'));
-        console.log(formData.get('password'));
+        console.log(formData.get('password'));  
+
+        navigate('/')
     }
 
 
