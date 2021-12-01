@@ -1,3 +1,7 @@
+import { Link } from 'react-router-dom'
+
+
+
 const Header = () => {
     return (
         <header>
@@ -10,16 +14,16 @@ const Header = () => {
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                         </button>
-                        {/* <a className="navbar-brand" href="/"><img className="img-responsive" src="img/home.jpeg" alt="Logo" /></a> */}
+                        {/* <a className="navbar-brand" Link to="/"><img className="img-responsive" src="img/home.jpeg" alt="Logo" /></a> */}
                     </div>
                     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav navbar-right">
-                            <li><a href="/register">Signup</a></li>
-                            <li><a href="/login">Login</a></li>
-                            <li><a href="/crate">Crate Recipe</a></li>
-                            <li><a href="/myrecipes">My Recipes</a></li>
-                            <li><a href="/recepies">All Recipes</a></li>
-                            <li><a href="/logout">Logout</a></li>
+                            <li><Link to="/register">Signup</Link></li>
+                            <li><Link to="/login">Login</Link></li>
+                            <li><Link to="/crate">Crate Recipe</Link></li>
+                            <li><Link to="/myrecipes">My Recipes</Link></li>
+                            <li><Link to="/recepies">All Recipes</Link></li>
+                            <li><Link to="/logout">Logout</Link></li>
                         </ul>
                     </div>
 				</div>
