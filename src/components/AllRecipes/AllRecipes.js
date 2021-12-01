@@ -1,12 +1,17 @@
 import { Link } from 'react-router-dom'
 
+import * as recipesService from '../../services/recipesService'
+
+
 const AllRecipes = () => {
+
+	
 
     return (
         <div className="blog" id="blog">
 				<div className="container">
 					<div className="default-heading">
-						<h2>Latest Blogs</h2>
+						<h2>All Recipes</h2>
 					</div>
 					<div className="row">
 						<div className="col-md-6 col-sm-6">
