@@ -14,7 +14,7 @@ const Header = () => {
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                         </button>
-                        {/* <a className="navbar-brand" Link to="/"><img className="img-responsive" src="img/home.jpeg" alt="Logo" /></a> */}
+                        <Link to="/" className="navbar-brand"><img className="img-responsive" src="img/blabla.png" alt="Logo" /></Link>
                     </div>
                     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav navbar-right">
