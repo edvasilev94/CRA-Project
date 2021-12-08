@@ -37,7 +37,7 @@ const Header = () => {
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                         </button>
-                        <Link to="/" className="navbar-brand"><img className="img-responsive" src="img/blabla.png" alt="Logo" /></Link>
+                        <Link to="/" className="navbar-brand"><img className="img-responsive" src="img/blabla.png" alt="Home" /></Link>
                     </div>
                     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     {user.email

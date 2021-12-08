@@ -19,6 +19,8 @@ const AllRecipes = () => {
 			})
 	}, []);
 
+	console.log(recipes)
+
 	return (
 		<div className="blog" id="blog">
 			<div className="container">

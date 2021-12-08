@@ -1,7 +1,7 @@
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import * as recipeService from "../../services/recipesService"
-import useRecipeState from "../hooks/useRecipeState";
+import useRecipeState from "../../hooks/useRecipeState";
 
 const EditRecipe = () => {
 
