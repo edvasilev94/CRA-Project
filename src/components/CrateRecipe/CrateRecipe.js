@@ -17,12 +17,19 @@ const CrateRecipe = () => {
         let img = formData.get("img");
         let steps = formData.get("steps");
 
+		// ingredients
+		// .toString()
+		// .split(", ")
+		// steps
+		// .toString()
+		// .split(", ")
+
         recipeService.create({
             name,
-            ingredients,
+            ingredients: ingredients.split(", "),
             timetocook,
             img,
-			steps
+			steps: steps.split(", ")
         }, user.accessToken)
             .then(x => {
                 navigate("/recipes");

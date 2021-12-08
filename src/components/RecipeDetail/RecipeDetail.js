@@ -24,7 +24,7 @@ const RecipeDetail = () => {
 				console.log(err);
 			})
 	}, [recipeId]);
-	console.log(recipe.steps)
+	console.log(recipe.ingredients)
     return (
 			
 				<div className="container">
