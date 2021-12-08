@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 
+import { AuthProvider } from './contexts/AuthContext';
 import Home from "./components/Home/Home";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
@@ -13,20 +14,23 @@ import RecipeDetail from './components/RecipeDetail/RecipeDetail';
 
 function App() {
   return (
-    <div>
-      <Header />
+    <AuthProvider>
+      <div>
+        <Header />
 
-      <Routes>
-        <Route path="/" element={<><Home/><HomePage /></>} />
-        <Route path="/recipes" element={<AllRecipes/>} />
-        <Route path="/crate" element={<CrateRecipe/>} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/register" element={<Register/>} />
-        <Route path="/recipe/details" element={<RecipeDetail/>} />
-       </Routes>
+        <Routes>
+          <Route path="/" element={<><Home /><HomePage /></>} />
+          <Route path="/recipes" element={<AllRecipes />} />
+          <Route path="/crate" element={<CrateRecipe />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/recipe/details/:recipeId" element={<RecipeDetail />} />
+        </Routes>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </AuthProvider>
   );
 }
 

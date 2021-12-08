@@ -1,20 +1,31 @@
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../contexts/AuthContext";
+import * as authService from "../../services/authService"
 
 
 const Login = () => {
 
     let navigate = useNavigate();
-    
+    const { login } = useAuthContext();
+
     const submitHandler = (e) => {
         e.preventDefault();
         
         let formData = new FormData(e.currentTarget);
 
+        let email = formData.get('email');
+        let password = formData.get('password');
+ 
 
-        console.log(formData.get('username'));
-        console.log(formData.get('password'));  
+        authService.login(email, password)
+            .then((userData) => {
+                login(userData);
 
-        navigate('/')
+                navigate('/');
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }
 
 
@@ -25,10 +36,10 @@ const Login = () => {
                 <h3>Sign In, To Your Account</h3>
                 <form role="form" id="login-form" onSubmit={submitHandler}>
                     <div className="form-group">
-                        <input type="text" className="form-control" name='username'id="exampleInputUser1" placeholder="Username" />
+                        <input type="text" className="form-control" name='email'id="email" placeholder="Email" />
                     </div>
                     <div className="form-group">
-                        <input type="password" className="form-control" name='password'id="exampleInputPassword1" placeholder="Password" />
+                        <input type="password" className="form-control" name='password'id="password" placeholder="Password" />
                     </div>
                     <div className="checkbox form-group">
                     </div>
