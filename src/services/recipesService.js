@@ -6,8 +6,8 @@ const baseUrl = "http://localhost:3030/data";
 export const getAll = () => request(`${baseUrl}/recipes`)
 
 
-export const getOne = (petId) => {
-    return fetch(`${baseUrl}/pets/${petId}`)
+export const getOne = (recipeId) => {
+    return fetch(`${baseUrl}/recipes/${recipeId}`)
         .then(res => res.json())
 };
 
@@ -26,3 +26,5 @@ export const create = async (recipeDetails, token) => {
 
     return result;
 };
+
+
