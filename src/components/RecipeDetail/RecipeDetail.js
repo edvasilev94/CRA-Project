@@ -1,9 +1,16 @@
+import { useState } from 'react';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 
+import * as recipeService from '../../services/recipesService';
+import { useAuthContext } from '../../contexts/AuthContext';
+import useRecipeState from '../../hooks/useRecipeState';
 
-const RecipeDetail = ({
-	recipe
-}) => {
-
+const RecipeDetail = () => {
+	
+	const navigate = useNavigate();
+    const { user } = useAuthContext();
+    const { recipeId } = useParams();
+    const [recipe, setRecipe] = useRecipeState(recipeId);
 
     return (
        
