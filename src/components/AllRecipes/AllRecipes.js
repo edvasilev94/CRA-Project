@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import RecipeCard from "../RecipeCard/RecipeCard";
 
-import { Link } from 'react-router-dom'
-
 import * as recipesService from '../../services/recipesService'
 
 

@@ -1,39 +1,40 @@
+import { useEffect, useState } from "react";
+import RecipeCard from "../RecipeCard/RecipeCard";
+
+import * as recipesService from '../../services/recipesService'
+
 import { Link } from 'react-router-dom'
 
 const HomePage = () => {
 
-    return (
-        <div className="blog" id="blog">
-				<div className="container">
-					<div className="default-heading">
-						<h2>Latest Blogs</h2>
-					</div>
-					<div className="row">
-						<div className="col-md-6 col-sm-6">
-							<div className="entry">
-								<img className="img-responsive" src="img/blog/1.jpg" alt="Blog" />
-								<h3><Link to="/recipe/details">Communicating with you every step of the way,</Link></h3>
-								<span className="meta">
-									July 02, 2014 | Tag: Technology | By: David John
-								</span>
-							</div>
-						</div>
-						<div className="col-md-6 col-sm-6">
-							<div className="entry">
-								<img className="img-responsive" src="img/blog/2.jpg" alt="Blog" />
-								<h3><Link to="/recipe/details">Communicating with you every step of the way,</Link></h3>
-								<span className="meta">
-									July 02, 2014 | Tag: Technology | By: David John
-								</span>
-							</div>
-						</div>
-					</div>
-					<div className="text-center">
-						<Link to="/recipes" className="btn btn-default">See More</Link>
-					</div>
+	let [recipes, setRecipes] = useState([]);
+
+	useEffect(() => {
+		recipesService.getAll()
+			.then(result => {
+				console.log(result);
+				setRecipes(result);
+			})
+			.catch(err => {
+				console.log(err);
+			})
+	}, []);
+
+	recipes = recipes.slice(0, 2)
+
+	return (
+		<div className="blog" id="blog">
+			<div className="container">
+				<div className="default-heading">
+					<h2>Latest Recipes</h2>
+				</div>
+					{recipes.map(x => <RecipeCard key={x._id} recipe={x} />)}
+				<div className="text-center">
+					<Link to="/recipes" className="btn btn-default">See More</Link>
 				</div>
 			</div>
-         )
+		</div>
+	)
 };
 
 export default HomePage;
