@@ -8,6 +8,7 @@ import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import CrateRecipe from './components/CrateRecipe/CrateRecipe'
 import AllRecipes from './components/AllRecipes/AllRecipes';
+import RecipeDetail from './components/RecipeDetail/RecipeDetail';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/crate" element={<CrateRecipe/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
+        <Route path="/recipe/details" element={<RecipeDetail/>} />
        </Routes>
 
       <Footer />
