@@ -20,7 +20,7 @@ const HomePage = () => {
 			})
 	}, []);
 
-	recipes = recipes.slice(0, 2)
+	recipes = recipes.slice(-2)
 
 	return (
 		<div className="blog" id="blog">

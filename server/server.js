@@ -1343,7 +1343,8 @@
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
     			name: "Easy Lasagnaannananana",
-    			img: "https://img.sndimg.com/food/image/upload/w_560,h_315,c_thumb,fl_progressive,q_80/v1/img/recipes/49/47/20/XFp2tLSSymRzV2yexsUh_SMALLER_LASAGNE_FOR_TWO_063.jpg",
+    			timetocook: 40,
+                img: "https://img.sndimg.com/food/image/upload/w_560,h_315,c_thumb,fl_progressive,q_80/v1/img/recipes/49/47/20/XFp2tLSSymRzV2yexsUh_SMALLER_LASAGNE_FOR_TWO_063.jpg",
     			ingredients: [
     				"1 tbsp Ingredient 1",
     				"2 cups Ingredient 2",
@@ -1360,6 +1361,7 @@
     		"8f414b4f-ab39-4d36-bedb-2ad69da9c830": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
     			name: "Grilled Duck Fillet",
+    			timetocook: 50,
     			img: "https://hips.hearstapps.com/hmg-prod/images/delish-roast-beef-horizontal-1540505165.jpg",
     			ingredients: [
     				"500 g  Ingredient 1",
@@ -1376,6 +1378,7 @@
     		"985d9eab-ad2e-4622-a5c8-116261fb1fd2": {
     			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
     			name: "Roast Trout",
+    			timetocook: 50,
     			img: "https://realfood.tesco.com/media/images/Roast-trout-recipe-1400x919-29a657f8-6f5b-4d2d-9f73-613453632482-0-1400x919.jpg",
     			ingredients: [
     				"4 cups Ingredient 1",

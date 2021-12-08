@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import RecipeCard from "../RecipeCard/RecipeCard";
 
-import * as recipesService from '../../services/recipesService'
+import * as recipesService from "../../services/recipesService";
 
 
 const AllRecipes = () => {

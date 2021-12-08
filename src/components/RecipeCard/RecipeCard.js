@@ -6,7 +6,7 @@ const RecipeCard = ({
 	recipe
 }) => {
 
-
+	console.log(recipe.timetocook)
 
 	return (
 		<div className="col-md-6 col-sm-6">
@@ -17,7 +17,7 @@ const RecipeCard = ({
 							<img className="img-responsive" src={recipe.img} />
 							<h3><Link to={`/recipe/details/${recipe._id}`}>{recipe.name}</Link></h3>
 							<span className="meta">
-								Time for cooking: 12 mins 
+								Time for cooking: {recipe.timetocook} mins 
 							</span>
 						</div>
 					</div>
