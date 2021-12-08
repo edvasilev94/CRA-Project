@@ -1,12 +1,5 @@
-const url = 'http://localhost:3030/jsonstore/cookbook'
+import { request } from './requester';
 
+const baseUrl = 'http://localhost:3030/data';
 
-export const getAll = () => {
-
-
-    return fetch(url)
-        .then(res => res.json())
-        // .then(pets => pets.map(x => ({...x, likes: Number(x.likes)})))
-        .then(console.log('OKAY'))
-        .catch(error => console.log(error));
-};
+export const getAll = () => request(`${baseUrl}/recipes`)
