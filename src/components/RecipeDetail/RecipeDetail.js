@@ -74,6 +74,15 @@ const RecipeDetail = () => {
 							}
 							</ol>
 						</div>
+						<h1>
+							Likes: {recipe.likes?.length}
+						</h1>
+
+						{   user.email && user._id != recipe._ownerId
+							?<h2><Link to="/" className="navbar-brand"><img className="img-responsive" src="/img/like.png" alt="Like" /></Link></h2>
+							: null
+						}
+
 						{ user._id == recipe._ownerId
 							? ownerButtons
 							: null

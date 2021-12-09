@@ -1344,6 +1344,9 @@
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
     			name: "Easy Lasagnaannananana",
     			timetocook: 40,
+    			likes: ["dasd",
+                        "asdasd",
+                        "asdasd"],
                 img: "https://img.sndimg.com/food/image/upload/w_560,h_315,c_thumb,fl_progressive,q_80/v1/img/recipes/49/47/20/XFp2tLSSymRzV2yexsUh_SMALLER_LASAGNE_FOR_TWO_063.jpg",
     			ingredients: [
     				"1 tbsp Ingredient 1",
@@ -1362,6 +1365,10 @@
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
     			name: "Grilled Duck Fillet",
     			timetocook: 50,
+    			likes: [
+                    "gerger",
+                     "asdasd"
+                    ],
     			img: "https://hips.hearstapps.com/hmg-prod/images/delish-roast-beef-horizontal-1540505165.jpg",
     			ingredients: [
     				"500 g  Ingredient 1",
@@ -1379,6 +1386,11 @@
     			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
     			name: "Roast Trout",
     			timetocook: 50,
+    			likes: ["sdsfsd",
+                        "rtyrty",
+                        "rtywer",
+                        "qwdvre"
+                    ],
     			img: "https://realfood.tesco.com/media/images/Roast-trout-recipe-1400x919-29a657f8-6f5b-4d2d-9f73-613453632482-0-1400x919.jpg",
     			ingredients: [
     				"4 cups Ingredient 1",
