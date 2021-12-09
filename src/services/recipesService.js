@@ -28,3 +28,18 @@ export const create = async (recipeDetails, token) => {
 };
 
 
+export const edit = async (recipeDetails, token, recipeId) => {
+    let response = await fetch(`${baseUrl}/recipes/${recipeId}`, {
+        method: "PUT",
+        headers: {
+            "content-type": "application/json",
+            "X-Authorization": token,
+        },
+        body: JSON.stringify({...recipeDetails, likes: []})
+    });
+
+    let result = await response.json();
+
+    return result;
+};
+

@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import * as recipesService from '../../services/recipesService';
 import { useAuthContext } from '../../contexts/AuthContext';
@@ -23,12 +23,35 @@ const EditRecipe = () => {
 			})
 	}, [recipeId]);
 
+
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
+        let formData = new FormData(e.currentTarget);
+
+        let name = formData.get("name");
+        let ingredients = formData.get("ingredients");
+        let timetocook = formData.get("timetocook");
+        let img = formData.get("img");
+        let steps = formData.get("steps");
+
+        recipesService.edit({
+            name,
+            ingredients: ingredients.split(", "),
+            timetocook,
+            img,
+			steps: steps.split(", ")
+        }, user.accessToken, recipe._id)
+            .then(x => {
+                navigate(`/recipe/details/${recipe._id}`);
+            })
+    }
+
     return (
         <div className="banner">
 				<div className="container">
 					<div className="register-area">
 						<h3>Edit Recipe</h3>
-						<form role="form" id="register-form">
+						<form role="form" id="register-form" onSubmit={onSubmitHandler}>
 							<div className="form-group">
 								<input type="text" className="form-control" name="name" id="name" defaultValue={recipe.name} placeholder="Recipe Name" />
 							</div>
