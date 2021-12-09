@@ -11,6 +11,7 @@ import CrateRecipe from './components/CrateRecipe/CrateRecipe'
 import AllRecipes from './components/AllRecipes/AllRecipes';
 import RecipeDetail from './components/RecipeDetail/RecipeDetail';
 import Logout from './components/Logout/Logout';
+import EditRecipe from './components/EditRecipe/EditRecipe';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/recipe/edit/:recipeId" element={<EditRecipe />} />
           <Route path="/recipe/details/:recipeId" element={<RecipeDetail />} />
         </Routes>
 

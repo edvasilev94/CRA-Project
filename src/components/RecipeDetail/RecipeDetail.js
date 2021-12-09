@@ -4,7 +4,6 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 
 import * as recipesService from '../../services/recipesService';
 import { useAuthContext } from '../../contexts/AuthContext';
-import useRecipeState from '../../hooks/useRecipeState';
 
 const RecipeDetail = () => {
 
@@ -24,12 +23,12 @@ const RecipeDetail = () => {
 				console.log(err);
 			})
 	}, [recipeId]);
-	console.log(recipe.ingredients)
+
 
 
 	let ownerButtons = (
 			<div className="col-md-8 col-sm-8">
-				<Link to="/recipes" className="btn btn-default">Edit</Link>
+				<Link to={`/recipe/edit/${recipe._id}`} className="btn btn-default">Edit</Link>
 				<Link to="/recipes" className="btn btn-default">Delete</Link>
 			</div>
 	)
