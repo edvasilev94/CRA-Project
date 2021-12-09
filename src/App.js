@@ -12,6 +12,7 @@ import AllRecipes from './components/AllRecipes/AllRecipes';
 import RecipeDetail from './components/RecipeDetail/RecipeDetail';
 import Logout from './components/Logout/Logout';
 import EditRecipe from './components/EditRecipe/EditRecipe';
+import MyRecipes from "./components/MyRecipes/MyRecipes"
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<><Home /><HomePage /></>} />
           <Route path="/recipes" element={<AllRecipes />} />
+          <Route path="/myrecipes" element={<MyRecipes />} />
           <Route path="/crate" element={<CrateRecipe />} />
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
