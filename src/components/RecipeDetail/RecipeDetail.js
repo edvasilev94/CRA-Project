@@ -25,11 +25,21 @@ const RecipeDetail = () => {
 	}, [recipeId]);
 
 
+	const deleteHandler = (e) => {
+		e.preventDefault();
+
+		recipesService.del(recipeId, user.accessToken)
+			.then(x => {
+				navigate("/recipes")
+			})
+	}
+
+
 
 	let ownerButtons = (
 			<div className="col-md-8 col-sm-8">
 				<Link to={`/recipe/edit/${recipe._id}`} className="btn btn-default">Edit</Link>
-				<Link to="/recipes" className="btn btn-default">Delete</Link>
+				<Link to={`/recipe/delete/${recipe._id}`} className="btn btn-default"  onClick={deleteHandler} >Delete</Link>
 			</div>
 	)
 
