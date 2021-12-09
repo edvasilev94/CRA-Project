@@ -25,6 +25,15 @@ const RecipeDetail = () => {
 			})
 	}, [recipeId]);
 	console.log(recipe.ingredients)
+
+
+	let ownerButtons = (
+			<div className="col-md-8 col-sm-8">
+				<Link to="/recipes" className="btn btn-default">Edit</Link>
+				<Link to="/recipes" className="btn btn-default">Delete</Link>
+			</div>
+	)
+
     return (
 			
 				<div className="container">
@@ -56,6 +65,7 @@ const RecipeDetail = () => {
 							}
 							</ol>
 						</div>
+						{ownerButtons}	
                     </div>	
 				</div>	
 		
