@@ -36,15 +36,17 @@ const EditRecipe = () => {
 
         recipesService.edit({
             name,
-            ingredients: ingredients.split(", "),
+            ingredients: ingredients.split(","),
             timetocook,
             img,
-			steps: steps.split(", ")
+			steps: steps.split(",")
         }, user.accessToken, recipe._id)
             .then(x => {
                 navigate(`/recipe/details/${recipe._id}`);
             })
     }
+
+    console.log(recipe.ingredients)
 
     return (
         <div className="banner">

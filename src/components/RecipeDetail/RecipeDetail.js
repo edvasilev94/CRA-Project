@@ -64,7 +64,10 @@ const RecipeDetail = () => {
 							}
 							</ol>
 						</div>
-						{ownerButtons}	
+						{ user._id == recipe._ownerId
+							? ownerButtons
+							: null
+						}	
                     </div>	
 				</div>	
 		

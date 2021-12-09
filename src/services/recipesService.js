@@ -43,3 +43,11 @@ export const edit = async (recipeDetails, token, recipeId) => {
     return result;
 };
 
+export const del = (recipeId, token) => {
+    return fetch(`${baseUrl}/recipe/${recipeId}`, {
+        method: 'DELETE',
+        headers: {
+            'X-Authorization': token
+        }
+    }).then(res => res.json());
+};
