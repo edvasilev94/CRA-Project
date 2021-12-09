@@ -29,9 +29,9 @@ const HomePage = () => {
 					<h2>Latest Recipes</h2>
 				</div>
 					{recipes.map(x => <RecipeCard key={x._id} recipe={x} />)}
+				</div>
 				<div className="text-center">
 					<Link to="/recipes" className="btn btn-default">See More</Link>
-				</div>
 			</div>
 		</div>
 	)
