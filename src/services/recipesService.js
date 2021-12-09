@@ -51,3 +51,16 @@ export const del = (recipeId, token) => {
         }
     }).then(res => res.json());
 };
+
+
+
+export const wtf = (recipeId, recipe, token) => {
+    return fetch(`${baseUrl}/recipes/${recipeId}`, {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json',
+            'X-Authorization': token
+        },
+        body: JSON.stringify(recipe)
+    }).then(res => res.json());
+};

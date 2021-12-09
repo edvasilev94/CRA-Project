@@ -2,8 +2,10 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 
+
 import * as recipesService from '../../services/recipesService';
 import { useAuthContext } from '../../contexts/AuthContext';
+import useRecpeState from "../../hooks/useRecipeState"
 
 const RecipeDetail = () => {
 
@@ -33,6 +35,34 @@ const RecipeDetail = () => {
 				navigate("/recipes")
 			})
 	}
+
+	const likeButtonHandler = () => {
+        if (recipe.likes.includes(user._id)) {
+            // TODO: add notification
+            console.log('User already liked');
+            return;
+        }
+
+        let likes = [...recipe.likes, user._id];
+        let likedRecipe = {...recipe, likes};
+
+		recipe.likes.push(user._id)
+		console.log(recipe.likes)
+
+        // recipesService.wtf(recipe._id, likedRecipe, user.accessToken)
+        //     .then((resData) => {
+        //         console.log(resData);
+        //         setRecipe(state => ({
+        //             ...state,
+        //             likes,
+        //         }));
+        //     })
+
+		setRecipe(state => ({
+				...state,
+				likes
+		}))
+    };
 
 
 
@@ -78,12 +108,12 @@ const RecipeDetail = () => {
 							Likes: {recipe.likes?.length}
 						</h1>
 
-						{   user.email && user._id != recipe._ownerId
-							?<h2><Link to="/" className="navbar-brand"><img className="img-responsive" src="/img/like.png" alt="Like" /></Link></h2>
+						{   user.email && user._id !== recipe._ownerId
+							?<h2><button onClick={likeButtonHandler}><img className="img-responsive" src="/img/like.png" alt="Like" /></button></h2>
 							: null
 						}
 
-						{ user._id == recipe._ownerId
+						{ user._id === recipe._ownerId
 							? ownerButtons
 							: null
 						}	
