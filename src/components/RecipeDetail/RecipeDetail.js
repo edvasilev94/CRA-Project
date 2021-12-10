@@ -71,7 +71,7 @@ const RecipeDetail = () => {
 					<div className="row">
 						<div className="col-md-6 col-sm-6">
 							<div className="entry">
-								<img className="img-responsive" src={recipe.img} alt="Blog" />
+								<img className="img-responsive" src={recipe.img} alt="Recipe" />
 								<h3>{recipe.name}</h3>
 								
 							</div>

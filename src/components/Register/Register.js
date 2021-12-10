@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router';
+import { useState } from 'react';
 
 import * as authService from '../../services/authService';
 import { useAuthContext } from '../../contexts/AuthContext';
@@ -7,6 +8,7 @@ const Register = () => {
 
 	const navigate = useNavigate();
     const { login } = useAuthContext();
+	const [passCheck, setPassCheck] = useState({errorMessage: null})
 
 	const onSubmitToHome = (e) => {
 		e.preventDefault();
@@ -16,13 +18,20 @@ const Register = () => {
 		let username = formData.get('username');
         let email = formData.get('email');
         let password = formData.get('password');
+        let rePassword = formData.get('repassword');
 
-		authService.register(username, email, password)   
-            .then(userData => {
-                login(userData);
-                
-                navigate('/');
-            });
+	
+		
+		if(passCheck.errorMessage === null){
+			authService.register(username, email, password)   
+			.then(userData => {
+				login(userData);
+				
+					navigate('/');
+				});
+		}
+
+
 	}
 
     return (
@@ -44,6 +53,9 @@ const Register = () => {
 							</div>
 							<div className="form-group">
 								<input type="password" className="form-control" name="repassword" id="repassword" placeholder="Re-Password" />
+							</div>
+							<div className="form-group">
+								{passCheck.errorMessage}
 							</div>
 							<button type="submit" className="btn btn-default">SignUp</button>&nbsp;
 						</form>

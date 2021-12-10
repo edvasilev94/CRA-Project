@@ -13,7 +13,7 @@ const RecipeCard = ({
 				<div className="row">
 					<div className="col-md-12 col-sm-12">
 						<div className="entry">
-							<img className="img-responsive" src={recipe.img} />
+							<img className="img-responsive" src={recipe.img} alt='Recipe'/>
 							<h3><Link to={`/recipe/details/${recipe._id}`}>{recipe.name}</Link></h3>
 							<span className="meta">
 								Time for cooking: {recipe.timetocook} mins 

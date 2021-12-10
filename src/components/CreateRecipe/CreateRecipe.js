@@ -2,7 +2,7 @@ import { useAuthContext } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import * as recipeService from "../../services/recipesService"
 
-const CrateRecipe = () => {
+const CreateRecipe = () => {
 
 	const { user } = useAuthContext();
     const navigate = useNavigate();
@@ -37,7 +37,7 @@ const CrateRecipe = () => {
         <div className="banner">
 				<div className="container">
 					<div className="register-area">
-						<h3>Crate Recipe</h3>
+						<h3>Create Recipe</h3>
 						<form role="form" id="register-form" onSubmit={onSubmitHandler}>
 							<div className="form-group">
 								<input type="text" className="form-control" name="name" id="name" placeholder="Recipe Name" />
@@ -56,7 +56,7 @@ const CrateRecipe = () => {
 							<div className="form-group">
 								<input type="text" className="form-control" name="steps" id="steps" placeholder="Instructions" />
 							</div>
-							<button type="submit" className="btn btn-default">Crate</button>&nbsp;
+							<button type="submit" className="btn btn-default">Create</button>&nbsp;
 						</form>
 					</div>
 				</div>
@@ -66,4 +66,4 @@ const CrateRecipe = () => {
         
 };
 
-export default CrateRecipe;
+export default CreateRecipe;

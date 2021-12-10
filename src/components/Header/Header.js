@@ -11,7 +11,7 @@ const Header = () => {
     let userNav = (
                          <ul className="nav navbar-nav navbar-right">
                             <li><Link to="/">Hello, {user.username}</Link></li>
-                            <li><Link to="/crate">Crate Recipe</Link></li>
+                            <li><Link to="/crate">Create Recipe</Link></li>
                             <li><Link to="/myrecipes">My Recipes</Link></li>
                             <li><Link to="/recipes">All Recipes</Link></li>
                             <li><Link to="/logout">Logout</Link></li>
