@@ -6,7 +6,6 @@ const RecipeCard = ({
 	recipe
 }) => {
 
-	console.log(recipe.timetocook)
 
 	return (
 		<div className="col-md-6 col-sm-6">

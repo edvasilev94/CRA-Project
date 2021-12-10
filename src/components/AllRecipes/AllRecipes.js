@@ -11,7 +11,7 @@ const AllRecipes = () => {
 	useEffect(() => {
 		recipesService.getAll()
 			.then(result => {
-				console.log(result);
+
 				setRecipes(result);
 			})
 			.catch(err => {
@@ -19,7 +19,6 @@ const AllRecipes = () => {
 			})
 	}, []);
 
-	console.log(recipes)
 
 	return (
 		<div className="blog" id="blog">

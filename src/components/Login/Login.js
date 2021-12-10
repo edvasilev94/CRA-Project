@@ -1,6 +1,6 @@
 import "./Login.css"
 
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
 import * as authService from "../../services/authService"
@@ -37,6 +37,10 @@ const Login = () => {
             });
     }
 
+    let errorContainer = (<div class="errorContainer">
+                            <p>{errors.message}</p>
+                        </div>)
+
 
     return (
         <div className="banner">
@@ -50,9 +54,13 @@ const Login = () => {
                     <div className="form-group">
                         <input type="password" className="form-control" name='password'id="password" placeholder="Password" />
                     </div>
-                    <div className="error">
+                    { errors.message
+                        ? errorContainer
+                        : null
+                    }
+                    {/* <div className="error">
                             {errors.message}
-                    </div>
+                    </div> */}
                     <button type="submit" className="btn btn-default">Login</button>
                 </form>
             </div>

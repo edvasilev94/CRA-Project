@@ -12,7 +12,6 @@ const HomePage = () => {
 	useEffect(() => {
 		recipesService.getAll()
 			.then(result => {
-				console.log(result);
 				setRecipes(result);
 			})
 			.catch(err => {
