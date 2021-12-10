@@ -46,7 +46,6 @@ const EditRecipe = () => {
             })
     }
 
-    console.log(recipe.ingredients)
 
     return (
         <div className="banner">

@@ -18,7 +18,6 @@ const RecipeDetail = () => {
 	useEffect(() => {
 		recipesService.getOne(recipeId)
 			.then(x => {
-				console.log(x);
 				setRecipe(x);
 			})
 			.catch(err => {
@@ -38,7 +37,6 @@ const RecipeDetail = () => {
 
 	const likeButtonHandler = () => {
         if (recipe.likes.includes(user._id)) {
-            // TODO: add notification
             console.log('User already liked');
             return;
         }
@@ -98,10 +96,11 @@ const RecipeDetail = () => {
 							}
 							</ol>
 						</div>
-						<h1>
-							Likes: {recipe.likes?.length}
-						</h1>
-
+							<div className="col-md-6 col-sm-6">
+								<h2>
+									Likes: {recipe.likes?.length}
+								</h2>
+							</div>
 						{   user.email && user._id !== recipe._ownerId
 							?<h2><button onClick={likeButtonHandler}><img className="img-responsive" src="/img/like.png" alt="Like" /></button></h2>
 							: null
