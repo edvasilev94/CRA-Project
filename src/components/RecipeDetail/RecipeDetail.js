@@ -1,4 +1,4 @@
-
+import "./RecipeDetails.css"
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 
@@ -46,30 +46,24 @@ const RecipeDetail = () => {
         let likes = [...recipe.likes, user._id];
         let likedRecipe = {...recipe, likes};
 
-		recipe.likes.push(user._id)
-		console.log(recipe.likes)
 
-        // recipesService.wtf(recipe._id, likedRecipe, user.accessToken)
-        //     .then((resData) => {
-        //         console.log(resData);
-        //         setRecipe(state => ({
-        //             ...state,
-        //             likes,
-        //         }));
-        //     })
+        recipesService.wtf(recipe._id, likedRecipe, user.accessToken)
+            .then((resData) => {
+                console.log(resData);
+                setRecipe(state => ({
+                    ...state,
+                    likes,
+                }));
+            })
 
-		setRecipe(state => ({
-				...state,
-				likes
-		}))
     };
 
 
 
 	let ownerButtons = (
 			<div className="col-md-8 col-sm-8">
-				<Link to={`/recipe/edit/${recipe._id}`} className="btn btn-default">Edit</Link>
-				<Link to={`/recipe/delete/${recipe._id}`} className="btn btn-default"  onClick={deleteHandler} >Delete</Link>
+				<Link to={`/recipe/edit/${recipe._id}`} className="btn btn-default edit">Edit</Link>
+				<Link to={`/recipe/delete/${recipe._id}`} className="btn btn-default delete"  onClick={deleteHandler} >Delete</Link>
 			</div>
 	)
 

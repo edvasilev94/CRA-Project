@@ -13,7 +13,7 @@ import RecipeDetail from './components/RecipeDetail/RecipeDetail';
 import Logout from './components/Logout/Logout';
 import EditRecipe from './components/EditRecipe/EditRecipe';
 import MyRecipes from "./components/MyRecipes/MyRecipes"
-
+import Error404 from './components/Error404/Error404';
 
 function App() {
   return (
@@ -31,6 +31,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/recipe/edit/:recipeId" element={<EditRecipe />} />
           <Route path="/recipe/details/:recipeId" element={<RecipeDetail />} />
+          <Route path="/*" element={<Error404 />} />
         </Routes>
 
         <Footer />
