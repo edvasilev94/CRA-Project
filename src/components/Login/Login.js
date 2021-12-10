@@ -1,16 +1,21 @@
+import "./Login.css"
+
+import {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
 import * as authService from "../../services/authService"
 
-import ErrorContainer from "../ErrorContainer/ErrorContainer";
 
 const Login = () => {
 
     let navigate = useNavigate();
     const { login } = useAuthContext();
+    const [errors, setErrors] = useState({message: null})
+    
 
     const submitHandler = (e) => {
         e.preventDefault();
+
         
         let formData = new FormData(e.currentTarget);
 
@@ -25,7 +30,10 @@ const Login = () => {
                 navigate('/');
             })
             .catch(err => {
-            
+                setErrors(state =>({
+                    ...state,
+                    message: "Username and password does not match"
+                }))
             });
     }
 
@@ -42,7 +50,8 @@ const Login = () => {
                     <div className="form-group">
                         <input type="password" className="form-control" name='password'id="password" placeholder="Password" />
                     </div>
-                    <div className="checkbox form-group">
+                    <div className="error">
+                            {errors.message}
                     </div>
                     <button type="submit" className="btn btn-default">Login</button>
                 </form>
