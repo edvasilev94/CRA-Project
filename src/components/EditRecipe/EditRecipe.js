@@ -47,8 +47,6 @@ const EditRecipe = () => {
 				message: "All fileds are requiered!"
 			}))
 		}else{
-
-			
 			recipesService.edit({
 				name,
 				ingredients: ingredients.split(","),

@@ -8,7 +8,15 @@ const Register = () => {
 
 	const navigate = useNavigate();
     const { login } = useAuthContext();
-	const [passCheck, setPassCheck] = useState({errorMessage: null})
+	const [passCheck, setPassCheck] = useState({passMessage: null})
+
+	const onChangeHandler = () =>{
+		setPassCheck(state => ({
+			...state,
+			passMessage: null
+		}))
+	}
+
 
 	const onSubmitToHome = (e) => {
 		e.preventDefault();
@@ -20,9 +28,15 @@ const Register = () => {
         let password = formData.get('password');
         let rePassword = formData.get('repassword');
 
-	
+		if(password !== rePassword){
+			return setPassCheck(state => ({
+				...state,
+				passMessage: "Passwords do not match!"
+			}))
+		}
 		
-		if(passCheck.errorMessage === null){
+		
+		if(passCheck.passMessage === null){
 			authService.register(username, email, password)   
 			.then(userData => {
 				login(userData);
@@ -31,8 +45,13 @@ const Register = () => {
 				});
 		}
 
-
 	}
+
+	let errorContainer = (<div className="errorContainer">
+								<p>{passCheck.passMessage}</p>
+	 						 </div>)
+		
+		
 
     return (
         <div className="banner">
@@ -49,14 +68,15 @@ const Register = () => {
 								<input type="email" className="form-control" name="email" id="email" placeholder="Enter email" />
 							</div>
 							<div className="form-group">
-								<input type="password" className="form-control" name="password" id="password" placeholder="Password" />
+								<input type="password" className="form-control" name="password" id="password" placeholder="Password" onChange={onChangeHandler} />
 							</div>
 							<div className="form-group">
-								<input type="password" className="form-control" name="repassword" id="repassword" placeholder="Re-Password" />
+								<input type="password" className="form-control" name="repassword" id="repassword" placeholder="Re-Password" onChange={onChangeHandler}/>
 							</div>
-							<div className="form-group">
-								{passCheck.errorMessage}
-							</div>
+							{passCheck.passMessage
+							?errorContainer
+							:null 
+							}
 							<button type="submit" className="btn btn-default">SignUp</button>&nbsp;
 						</form>
 					</div>
