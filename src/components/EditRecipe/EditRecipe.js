@@ -12,6 +12,7 @@ const EditRecipe = () => {
     const { recipeId } = useParams();
 
 	const [recipe, setRecipe] = useState([]);
+	const [error, setError] = useState({message: null});
 
 	useEffect(() => {
 		recipesService.getOne(recipeId)
@@ -34,19 +35,38 @@ const EditRecipe = () => {
         let img = formData.get("img");
         let steps = formData.get("steps");
 
-        recipesService.edit({
-            name,
-            ingredients: ingredients.split(","),
-            timetocook,
-            img,
-			steps: steps.split(",")
-        }, user.accessToken, recipe._id)
+
+
+		if(name === "" 
+			|| ingredients === ""
+			|| timetocook === ""
+			|| img ===""
+			|| steps === ""){
+			setError(state =>({
+				...state,
+				message: "All fileds are requiered!"
+			}))
+		}else{
+
+			
+			recipesService.edit({
+				name,
+				ingredients: ingredients.split(","),
+				timetocook,
+				img,
+				steps: steps.split(",")
+			}, user.accessToken, recipe._id)
             .then(x => {
-                navigate(`/recipe/details/${recipe._id}`);
+				navigate(`/recipe/details/${recipe._id}`);
             })
-    }
+			}
+		}
 
-
+		let errorContainer = (<div className="errorContainer">
+								<p>{error.message}</p>
+	 						 </div>)
+		
+		
     return (
         <div className="banner">
 				<div className="container">
@@ -70,6 +90,10 @@ const EditRecipe = () => {
 							<div className="form-group">
 								<input type="text" className="form-control" name="steps" id="steps" defaultValue={recipe.steps} placeholder="Instructions" />
 							</div>
+							{ error.message
+                        			? errorContainer
+                       			    : null
+                  		    }
 							<button type="submit" className="btn btn-default">Edit</button>&nbsp;
 						</form>
 					</div>
