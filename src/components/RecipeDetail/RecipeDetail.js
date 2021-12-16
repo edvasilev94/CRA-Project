@@ -5,8 +5,6 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 
 import * as recipesService from '../../services/recipesService';
 import { useAuthContext } from '../../contexts/AuthContext';
-import useRecpeState from "../../hooks/useRecipeState"
-
 const RecipeDetail = () => {
 
 	const navigate = useNavigate();
@@ -14,6 +12,18 @@ const RecipeDetail = () => {
     const { recipeId } = useParams();
 
 	const [recipe, setRecipe] = useState([]);
+	const [likes, setLikes] = useState(recipeId);
+	console.log(recipe)
+
+	// useEffect(() => {
+	// 	recipesService.likesCount(recipeId)
+	// 	.then(likes => {
+	// 		setLikes(state => ({
+	// 			...state,
+	// 			likes
+	// 		}))
+	// 	})
+	// }, []);
 
 	useEffect(() => {
 		recipesService.getOne(recipeId)
@@ -54,8 +64,12 @@ const RecipeDetail = () => {
                 }));
             })
 
-    };
+		// recipesService.like(user._id, recipeId, user.accessToken)
+		// 	.then(() => {
+        //         setLikes(state => ({...state, likes:state.likes + 1}));
+		// 	})
 
+    };
 
 
 	let ownerButtons = (
