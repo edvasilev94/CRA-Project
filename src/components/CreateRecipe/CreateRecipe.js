@@ -77,7 +77,7 @@ let errorContainer = (<div className="errorContainer">
                         			? errorContainer
                        			    : null
                   		    }
-
+							<h4>All Fields are required</h4>
 							<button type="submit" className="btn btn-default">Create</button>&nbsp;
 						</form>
 					</div>
