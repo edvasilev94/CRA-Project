@@ -91,7 +91,7 @@ const RecipeDetail = () => {
 							</div>
                         </div>
 						<div className="col-md-6 col-sm-6">
-							<h4> Ingredients </h4>
+							<h3> Ingredients </h3>
 							<ul>
 								{
 								recipe.length <= 0
@@ -101,7 +101,7 @@ const RecipeDetail = () => {
 							</ul>
 						</div>
 						<div className="col-md-6 col-sm-6">
-						<h4> Steps </h4>
+						<h3> Steps </h3>
 							<ol>
 							{
 								recipe.length <= 0
