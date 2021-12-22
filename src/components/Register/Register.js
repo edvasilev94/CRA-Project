@@ -1,3 +1,5 @@
+import "./Register.css"
+
 import { useNavigate } from 'react-router';
 import { useState } from 'react';
 
@@ -10,12 +12,15 @@ const Register = () => {
     const { login } = useAuthContext();
 	const [passCheck, setPassCheck] = useState({passMessage: null})
 
+
 	const onChangeHandler = () =>{
 		setPassCheck(state => ({
 			...state,
 			passMessage: null
 		}))
 	}
+
+	
 
 
 	const onSubmitToHome = (e) => {
@@ -28,6 +33,15 @@ const Register = () => {
         let password = formData.get('password');
         let rePassword = formData.get('repassword');
 
+		let isFilled = true;
+
+		if(username === ""
+			|| email ===""
+			|| password ===""
+			|| rePassword ===""	){
+				isFilled = false;
+		}
+
 		if(password !== rePassword){
 			return setPassCheck(state => ({
 				...state,
@@ -36,7 +50,7 @@ const Register = () => {
 		}
 		
 		
-		if(passCheck.passMessage === null){
+		if(passCheck.passMessage === null && isFilled === true){
 			authService.register(username, email, password)   
 			.then(userData => {
 				login(userData);
@@ -77,6 +91,7 @@ const Register = () => {
 							?errorContainer
 							:null 
 							}
+							<h4>All Fields are required</h4>
 							<button type="submit" className="btn btn-default">SignUp</button>&nbsp;
 						</form>
 					</div>
