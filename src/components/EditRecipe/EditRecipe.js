@@ -44,7 +44,7 @@ const EditRecipe = () => {
 			|| steps === ""){
 			setError(state =>({
 				...state,
-				message: "All fileds are requiered!"
+				message: "All fileds are required!"
 			}))
 		}else{
 			recipesService.edit({

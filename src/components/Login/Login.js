@@ -32,7 +32,7 @@ const Login = () => {
             .catch(err => {
                 setErrors(state =>({
                     ...state,
-                    message: "Username and password does not match"
+                    message: "Invalid username or password"
                 }))
             });
     }

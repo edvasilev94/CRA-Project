@@ -1363,10 +1363,10 @@
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
     			name: "Grilled Duck Fillet",
     			timetocook: 50,
-    			// likes: [
-                //     "gerger",
-                //      "asdasd"
-                //     ],
+    			likes: [
+                    "gerger",
+                     "asdasd"
+                    ],
     			img: "https://hips.hearstapps.com/hmg-prod/images/delish-roast-beef-horizontal-1540505165.jpg",
     			ingredients: [
     				"500 g  Ingredient 1",
